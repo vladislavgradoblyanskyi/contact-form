@@ -5,16 +5,58 @@
     <link rel="icon" type="image/svg+xml" href="/contact-form/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
     <script type="module" crossorigin src="/contact-form/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/contact-form/assets/vendor-CXm_Rd4Z.js">
+    <link rel="stylesheet" crossorigin href="/contact-form/assets/index-nFc9dqaC.css">
   </head>
   <body>
 
-
     <main>
-      
+<!-- zawartosc strony -->
+ <div class="backdrop">
+      <div class="modal" style="transform: translate(-50%, -50%);">
+        <p class="modal-p">Zostaw swoje dane</p>
+        <form id="send">
+          <div class="modal-form-field">
+            <label for="imie" class="label-name">Imię</label>
+            <div class="modal-input-sec">
+              <input type="text"  name="username" class="modal-input" id="imie"/>
+              <svg width="18" height="24" class="modal-input-svg">
+                <use href="/contact-form/assets/icons-BKOaJTVL.svg#icon-vector"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label for="nazwisko" class="label-name">Nazwisko</label>
+            <div class="modal-input-sec">
+              <input type="text"  name="surname" class="modal-input"  id="nazwisko"/>
+              <svg width="18" height="24" class="modal-input-svg">
+                <use href="/contact-form/assets/icons-BKOaJTVL.svg#icon-vector"></use>
+              </svg>
+            </div>
+          </div>
+        
+          <div class="modal-form-field">
+            <label for="email" class="label-name">Email</label>
+            <div class="modal-input-sec">
+              <input type="email" name="email" class="modal-input"  id="email"/>
+              <svg width="18" height="24" class="modal-input-svg">
+                <use href="/contact-form/assets/icons-BKOaJTVL.svg#icon-vector-phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-textarea">
+            <label for="komentarz" class="label-name">Komentarz</label>
+            <textarea name="user-comment" placeholder="Text input" class="modal-textarea" id="komentarz"></textarea>
+          </div>
+
+          <button type="submit" class="modal-submit"  name="send">Send</button>
+        </form>
+        <button type="submit" class="modal-submit"  id="tablica-btn">Pokaz tablice</button>
+        <div id="messages"></div>
+      </div>
+    </div>
+
     </main>
-
-
   </body>
 </html>
