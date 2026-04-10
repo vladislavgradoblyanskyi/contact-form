@@ -20,11 +20,11 @@ continue;
 }
 
         echo "<tr>";
-        echo "<td>".$dane[0]."</td>";
-        echo "<td>".$dane[1]."</td>";
-        echo "<td>".$dane[2]."</td>";
-        echo "<td>".$dane[3]."</td>";
-        echo "<td>".$dane[4]."</td>";
+        echo "<td>" .htmlspecialchars(trim($dane[0])). "</td>";
+        echo "<td>" .htmlspecialchars(trim($dane[1])). "</td>";
+        echo "<td>" .htmlspecialchars(trim($dane[2])). "</td>";
+        echo "<td>" .htmlspecialchars(trim($dane[3])). "</td>";
+        echo "<td>" .htmlspecialchars(trim($dane[4])). "</td>";
         echo "</tr>";
 
     }
