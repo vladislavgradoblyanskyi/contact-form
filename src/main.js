@@ -3,7 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const form = document.querySelector("#send")
-const backdrop = document.querySelector(".backdrop");
+const tylStrony = document.querySelector(".tyl-strony");
 
 form.addEventListener("submit",async (evt)=>{
     evt.preventDefault();
@@ -11,17 +11,20 @@ form.addEventListener("submit",async (evt)=>{
     const imie = document.querySelector("#imie").value.trim();
     const nazwisko = document.querySelector("#nazwisko").value.trim();
     const email = document.querySelector("#email").value.trim();
+    const Tematkomentarz = document.querySelector("#Tematkomentarz").value.trim();
     const komentarz = document.querySelector("#komentarz").value.trim();
 
-    if(!imie || !nazwisko || !email){
+    if(!imie || !nazwisko || !email || !Tematkomentarz || !komentarz){
         Swal.fire({
         title: "musisz wypelnic pola!",
         icon: "info",
     });
         return;
+    
     }
+    console.log(typeof imie,typeof nazwisko,typeof Tematkomentarz,typeof email);
     try{
-        const res = await axios.post("http://localhost/api/send.php",{imie,nazwisko,email,komentarz});
+        const res = await axios.post("http://localhost/api/send.php",{imie,nazwisko,email,Tematkomentarz,komentarz});
         Swal.fire({
             title:"Sukces",
             icon:"success"
@@ -30,8 +33,9 @@ form.addEventListener("submit",async (evt)=>{
         form.reset();
     }
     catch{
+
         Swal.fire({
-            title:"Błąd serwera",
+            title:"Błąd serwera lub nieprawidlowo wprowadzone dane",
             icon:"error"
             });
     }

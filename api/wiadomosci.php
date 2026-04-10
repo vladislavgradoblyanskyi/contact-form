@@ -7,14 +7,15 @@
             <th>Imię</th>
             <th>Nazwisko</th>
             <th>Email</th>
+            <th>Temat Wiadomości</th>
             <th>Wiadomość</th>
          </tr>";
 
     while(($linia = fgets($plik)) !== false){
 
-   $dane = explode("|",$linia);
+        $dane = explode("|",$linia);
 
-if(count($dane) < 4){
+if(count($dane) < 5){
 continue;
 }
 
@@ -23,10 +24,10 @@ continue;
         echo "<td>".$dane[1]."</td>";
         echo "<td>".$dane[2]."</td>";
         echo "<td>".$dane[3]."</td>";
+        echo "<td>".$dane[4]."</td>";
         echo "</tr>";
 
     }
-
     echo "</table>";
 
     fclose($plik);

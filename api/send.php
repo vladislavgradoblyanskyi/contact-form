@@ -6,11 +6,15 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$imie = $data["imie"];
-$nazwisko = $data["nazwisko"];
-$email = $data["email"];
-$komentarz = $data["komentarz"];
+$imie = trim($data["imie"]);
+$nazwisko = trim($data["nazwisko"]);
+$email = trim($data["email"]);
+$Tematkomentarz = trim($data["Tematkomentarz"]);
+$komentarz = trim($data["komentarz"]);
 
-$linia = $imie."|".$nazwisko."|".$email."|".$komentarz."\n";
+if (!$data || $imie === "" || $nazwisko === "" || $email === "" || $Tematkomentarz === "" || $komentarz === "" || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    exit("bledne dane");
+}
+    $linia = $imie."|".$nazwisko."|".$email."|".$Tematkomentarz. "|" .$komentarz."\n";
 
-file_put_contents("dane.txt",$linia,FILE_APPEND);
+    file_put_contents("dane.txt",$linia,FILE_APPEND);
